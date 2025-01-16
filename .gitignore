@@ -17,3 +17,4 @@ log.txt
 *.log
 *.help
 tmp-*
+cache/
