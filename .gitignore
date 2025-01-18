@@ -20,4 +20,5 @@ tmp-*
 cache/
 *.log
 *.help
-tmp-*
+tmp*
+*.tmp
