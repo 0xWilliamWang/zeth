@@ -4,7 +4,8 @@ members = ["bin/*", "crates/*", "guests", "testing/ef-tests"]
 
 # Always optimize; building and running the guest takes much longer without optimization.
 [profile.dev]
-opt-level = 3
+opt-level = 0
+incremental = true
 
 [profile.dev.build-override]
 opt-level = 3
@@ -33,7 +34,8 @@ features = ["unstable"]
 [workspace.dependencies]
 # Alloy
 alloy = { version = "0.4.2", features = ["full"] }
-alloy-chains = "0.1.38"
+# alloy-chains = "0.1.38"
+alloy-chains = { path = "/code/github/org-alloy-rs/chains", version = "0.1.56"}
 alloy-consensus = "0.4.2"
 alloy-genesis = "0.4.2"
 alloy-primitives = { version = "0.8.18", default-features = false, features = ["k256", "map-hashbrown"] }
