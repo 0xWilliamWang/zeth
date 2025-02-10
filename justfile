@@ -4,9 +4,9 @@ default:
 build +ARGS="--release":
     cargo build -p zeth-ethereum --bin zeth-ethereum {{ARGS}}
 
-    cargo build -p zeth-optimism --bin zeth-optimism {{ARGS}}
+    # cargo build -p zeth-optimism --bin zeth-optimism {{ARGS}}
 
-    cargo build -p zeth-benchmark --bin zeth-benchmark {{ARGS}}
+    # cargo build -p zeth-benchmark --bin zeth-benchmark {{ARGS}}
 
 cuda: (build "--release -F cuda")
 

@@ -77,6 +77,8 @@ impl<N: Network> Provider<N> for RpcProvider<N> {
             .tokio_handle
             .block_on(self.http_client.get_chain_id())?;
 
+        println!("NamedChain: {:?}", NamedChain::Dev);
+        println!("william Chain ID: {:?}", response);
         Ok(NamedChain::try_from(response).expect("Unknown chain id"))
     }
 

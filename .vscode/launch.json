@@ -1,0 +1,287 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'zeth-benchmark'",
+      "cargo": {
+        "args": ["build", "--bin=zeth-benchmark", "--package=zeth-benchmark"],
+        "filter": {
+          "name": "zeth-benchmark",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'zeth-benchmark'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=zeth-benchmark",
+          "--package=zeth-benchmark"
+        ],
+        "filter": {
+          "name": "zeth-benchmark",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in library 'zeth'",
+      "cargo": {
+        "args": ["test", "--no-run", "--lib", "--package=zeth"],
+        "filter": {
+          "name": "zeth",
+          "kind": "lib"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in library 'zeth_core'",
+      "cargo": {
+        "args": ["test", "--no-run", "--lib", "--package=zeth-core"],
+        "filter": {
+          "name": "zeth_core",
+          "kind": "lib"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in library 'zeth_guests'",
+      "cargo": {
+        "args": ["test", "--no-run", "--lib", "--package=zeth-guests"],
+        "filter": {
+          "name": "zeth_guests",
+          "kind": "lib"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in library 'zeth_preflight'",
+      "cargo": {
+        "args": ["test", "--no-run", "--lib", "--package=zeth-preflight"],
+        "filter": {
+          "name": "zeth_preflight",
+          "kind": "lib"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "build 'zeth-ethereum'",
+      "cargo": {
+        "args": ["build", "--bin=zeth-ethereum", "--package=zeth-ethereum"],
+        "filter": {
+          "name": "zeth-ethereum",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug 'zeth-ethereum'",
+      "cargo": {
+        "args": [
+          "run",
+          "--package=zeth-ethereum",
+          "--bin=zeth-ethereum",
+          "--verbose",
+          "--"
+          //   "--rpc=http://192.168.50.158:8545 --chain=dev --block-count=1 --block-number=100"
+          // "--help",
+        ]
+        // "filter": {
+        //     "name": "zeth-ethereum",
+        //     "kind": "bin"
+        // }
+      },
+      "args": [
+        // "--version"
+        // "prove --rpc=http://192.168.50.158:8545 --chain=dev --block-count=1 --block-number=100"
+        "prove",
+        // "--rpc=http://192.168.50.158:8545",
+        // "--chain=dev",
+        // "--block-count=1",
+        // "--block-number=100"
+      ],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'zeth-ethereum'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=zeth-ethereum",
+          "--package=zeth-ethereum"
+        ],
+        "filter": {
+          "name": "zeth-ethereum",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in library 'zeth_preflight_ethereum'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--lib",
+          "--package=zeth-preflight-ethereum"
+        ],
+        "filter": {
+          "name": "zeth_preflight_ethereum",
+          "kind": "lib"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in library 'zeth_core_ethereum'",
+      "cargo": {
+        "args": ["test", "--no-run", "--lib", "--package=zeth-core-ethereum"],
+        "filter": {
+          "name": "zeth_core_ethereum",
+          "kind": "lib"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'zeth-optimism'",
+      "cargo": {
+        "args": ["build", "--bin=zeth-optimism", "--package=zeth-optimism"],
+        "filter": {
+          "name": "zeth-optimism",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'zeth-optimism'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=zeth-optimism",
+          "--package=zeth-optimism"
+        ],
+        "filter": {
+          "name": "zeth-optimism",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in library 'zeth_preflight_optimism'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--lib",
+          "--package=zeth-preflight-optimism"
+        ],
+        "filter": {
+          "name": "zeth_preflight_optimism",
+          "kind": "lib"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in library 'zeth_core_optimism'",
+      "cargo": {
+        "args": ["test", "--no-run", "--lib", "--package=zeth-core-optimism"],
+        "filter": {
+          "name": "zeth_core_optimism",
+          "kind": "lib"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in library 'zeth_testeth'",
+      "cargo": {
+        "args": ["test", "--no-run", "--lib", "--package=zeth-testeth"],
+        "filter": {
+          "name": "zeth_testeth",
+          "kind": "lib"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug integration test 'evm'",
+      "cargo": {
+        "args": ["test", "--no-run", "--test=evm", "--package=zeth-testeth"],
+        "filter": {
+          "name": "evm",
+          "kind": "test"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
