@@ -127,6 +127,11 @@ where
         block_number: u64,
         block_count: u64,
     ) -> anyhow::Result<Vec<u8>> {
+        // info!("Chain ID: {:?}", chain_id);
+        // info!("Cache directory: {:?}", cache_dir);
+        // info!("RPC URL: {:?}", rpc_url);
+        // info!("Block Number: {:?}", block_number);
+        // info!("Block Count: {:?}", block_count);
         let validation_tip_block_no = block_number + block_count - 1;
         // Fetch the block
         let (validation_tip_block, chain, client_version) = spawn_blocking(move || {
@@ -149,6 +154,7 @@ where
         .await?;
 
         info!("Connected to provider that uses client version: {client_version}");
+        // info!("validation_tip_block: {:?}",validation_tip_block);
 
         let header = P::derive_header_response(validation_tip_block);
 
@@ -175,6 +181,8 @@ where
         ]
         .concat();
 
+        // info!("chain:{:?}",chain);
+        // info!("journal:{},{:?}",journal.len(),journal);
         info!("Final chain difficulty: {}", final_difficulty);
         Ok(journal)
     }

@@ -22,16 +22,24 @@ pub extern "C" fn __ctzsi2(x: u32) -> usize {
     x.trailing_zeros() as usize
 }
 
+// NOTE guest code
 fn main() {
     let stateless_client_data_rkyv = env::read_frame();
     let stateless_client_data_pot = env::read_frame();
-    env::log("Deserializing input data");
+    env::log("====================pos 1====================");
+    let hex_rkyv:String =stateless_client_data_rkyv.iter().map(|byte| format!("{:02x}",byte)).collect();
+    let tmp:String = format!("stateless_client_data_rkyv: {},{}",stateless_client_data_rkyv.len(),hex_rkyv);
+    env::log(&tmp);
+    let hex_pot:String =stateless_client_data_pot.iter().map(|byte| format!("{:02x}",byte)).collect();
+    let tmp:String = format!("stateless_client_data_pot:{},{}",stateless_client_data_pot.len(),hex_pot);
+    env::log(&tmp);
     let stateless_client_data =
         <RethStatelessClient as StatelessClient<RethCoreDriver, MemoryDB>>::data_from_parts(
             &stateless_client_data_rkyv,
             &stateless_client_data_pot,
         )
         .expect("Failed to load client data from stdin");
+    env::log("====================pos 2====================");
     let validation_depth = stateless_client_data.blocks.len() as u64;
     assert!(
         stateless_client_data.chain.is_ethereum(),

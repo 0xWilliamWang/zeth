@@ -4,10 +4,8 @@ members = ["bin/*", "crates/*", "guests", "testing/ef-tests"]
 
 # Always optimize; building and running the guest takes much longer without optimization.
 [profile.dev]
-opt-level = 3
-
-[profile.dev.build-override]
-opt-level = 3
+opt-level = 0
+incremental = true
 
 [profile.release]
 debug = 1
@@ -37,7 +35,8 @@ features = ["orphan", "rkyv", "rlp_serialize", "serde"]
 [workspace.dependencies]
 # Alloy
 alloy = { version = "0.4.2", features = ["full"] }
-alloy-chains = "0.1.38"
+# alloy-chains = "0.1.38"
+alloy-chains = { git = "https://github.com/0xWilliamWang/chains", branch = "dev"}
 alloy-consensus = "0.4.2"
 alloy-genesis = "0.4.2"
 alloy-primitives = { version = "0.8.18", default-features = false, features = ["k256", "map-hashbrown"] }

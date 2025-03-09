@@ -72,7 +72,7 @@ where
         build_args.block_count,
     )
     .await?;
-    info!("Journal prepared.");
+    // info!("Journal prepared:{:?}",expected_journal);
 
     if !cli.should_build() {
         let verify_args = cli.verify_args();

@@ -41,5 +41,11 @@ pub fn build_executor_env<'b>(
         );
         builder.enable_profiler(file_name);
     }
+
+    let hex_pot:String =witness.encoded_rkyv_input.iter().map(|byte| format!("{:02x}",byte)).collect();
+    log::info!("witness.encoded_rkyv_input:{},{}",witness.encoded_rkyv_input.len(),hex_pot);
+    let hex_rkyv:String =witness.encoded_chain_input.iter().map(|byte| format!("{:02x}",byte)).collect();
+    log::info!("witness.encoded_chain_input: {},{}",witness.encoded_chain_input.len(),hex_rkyv);
+
     builder.build()
 }
