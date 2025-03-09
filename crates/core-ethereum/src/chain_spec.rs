@@ -124,20 +124,53 @@ pub static HOLESKY: Lazy<Arc<ChainSpec>> = Lazy::new(|| {
     .into()
 });
 
-/// Dev testnet specification
+/// NOTE Dev testnet specification
 ///
 /// Includes 20 prefunded accounts with `10_000` ETH each derived from mnemonic "test test test test
 /// test test test test test test test junk".
 pub static DEV: Lazy<Arc<ChainSpec>> = Lazy::new(|| {
-    ChainSpec {
+    let spec = ChainSpec {
         chain: Chain::dev(),
-        genesis: Genesis::default(),
-        genesis_hash: once_cell_set(DEV_GENESIS_HASH),
+        genesis: {
+            let mut genesis = Genesis::default()
+            .with_nonce(0)
+            .with_timestamp(1741521992)
+            .with_difficulty(U256::from(0x01u128))
+            .with_gas_limit(0x1c9c380)
+            .with_extra_data(bytes!("0000000000000000000000000000000000000000000000000000000000000000d4bdb75a2a23effc556b680a7b890799867ffd900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"));
+            genesis.config.dao_fork_support=true;
+            genesis.config.chain_id=Chain::dev().id();
+            genesis.config.homestead_block=Some(0);
+            genesis.config.eip150_block=Some(0);
+            genesis.config.eip158_block=Some(0);
+            genesis.config.byzantium_block=Some(0);
+            genesis.config.constantinople_block=Some(0);
+            genesis.config.petersburg_block=Some(0);
+            genesis.config.istanbul_block=Some(0);
+            genesis.config.muir_glacier_block=Some(0);
+            genesis.config.berlin_block=Some(0);
+            genesis.config.london_block=Some(0);
+            genesis.config.arrow_glacier_block=Some(0);
+            genesis.config.gray_glacier_block=Some(0);
+            genesis.config.shanghai_time=Some(1740705554);
+            genesis.config.cancun_time=Some(1740705554);
+            genesis.config.prague_time=Some(1740705554);
+            genesis.config.terminal_total_difficulty=Some(U256::from(0));
+            genesis.config.terminal_total_difficulty_passed=true;
+            genesis
+        },
+        genesis_hash: once_cell_set(b256!("4db3b9bf5f853f2b65c04b4977f3e8263ee6144d06a17a9cce0fdb36382f4a65")),
         paris_block_and_final_difficulty: Some((0, U256::from(0))),
         hardforks: DEV_HARDFORKS.clone(),
         base_fee_params: BaseFeeParamsKind::Constant(BaseFeeParams::ethereum()),
-        deposit_contract: None, // TODO: do we even have?
+        deposit_contract: Some(DepositContract::new(
+            address!("2d2d2d62322d6875622d65786563746f722d2d2d"),
+            0,
+            b256!("649bbc62d0e31342afea4e5cd82d4049e7e1ee912fc0889aa790803be39038c5"),
+        )),
         ..Default::default()
     }
-    .into()
+    .into();
+    println!("DEV: {:?}", spec);
+    spec
 });
