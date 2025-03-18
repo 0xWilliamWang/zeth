@@ -46,31 +46,31 @@ op-alloy-network = "0.4.0"
 op-alloy-rpc-types = "0.4.0"
 
 # Reth
-reth-chainspec = { git = "https://github.com/0xWilliamWang/reth", branch = "p1.1.0_zstd", default-features = false, features = [
+reth-chainspec = { git = "https://github.com/0xWilliamWang/reth", rev = "2591752ec3237a4b00734c6bd466fdf6c3f5a47e", default-features = false, features = [
     "std",
 ] }
-reth-consensus = { git = "https://github.com/0xWilliamWang/reth", branch = "p1.1.0_zstd" }
-reth-ethereum-consensus = { git = "https://github.com/0xWilliamWang/reth", branch = "p1.1.0_zstd" }
-reth-evm = { git = "https://github.com/0xWilliamWang/reth", branch = "p1.1.0_zstd", default-features = false, features = [
+reth-consensus = { git = "https://github.com/0xWilliamWang/reth", rev = "2591752ec3237a4b00734c6bd466fdf6c3f5a47e" }
+reth-ethereum-consensus = { git = "https://github.com/0xWilliamWang/reth", rev = "2591752ec3237a4b00734c6bd466fdf6c3f5a47e" }
+reth-evm = { git = "https://github.com/0xWilliamWang/reth", rev = "2591752ec3237a4b00734c6bd466fdf6c3f5a47e", default-features = false, features = [
     "std",
 ] }
-reth-evm-ethereum = { git = "https://github.com/0xWilliamWang/reth", branch = "p1.1.0_zstd", default-features = false, features = [
+reth-evm-ethereum = { git = "https://github.com/0xWilliamWang/reth", rev = "2591752ec3237a4b00734c6bd466fdf6c3f5a47e", default-features = false, features = [
     "std",
 ] }
-reth-optimism-chainspec = { git = "https://github.com/0xWilliamWang/reth", branch = "p1.1.0_zstd", default-features = false, features = [
+reth-optimism-chainspec = { git = "https://github.com/0xWilliamWang/reth", rev = "2591752ec3237a4b00734c6bd466fdf6c3f5a47e", default-features = false, features = [
     "std",
 ] }
-reth-optimism-consensus = { git = "https://github.com/0xWilliamWang/reth", branch = "p1.1.0_zstd" }
-reth-optimism-evm = { git = "https://github.com/0xWilliamWang/reth", branch = "p1.1.0_zstd", default-features = false }
-reth-optimism-forks = { git = "https://github.com/0xWilliamWang/reth", branch = "p1.1.0_zstd", default-features = false }
-reth-primitives = { git = "https://github.com/0xWilliamWang/reth", branch = "p1.1.0_zstd", default-features = false, features = [
+reth-optimism-consensus = { git = "https://github.com/0xWilliamWang/reth", rev = "2591752ec3237a4b00734c6bd466fdf6c3f5a47e" }
+reth-optimism-evm = { git = "https://github.com/0xWilliamWang/reth", rev = "2591752ec3237a4b00734c6bd466fdf6c3f5a47e", default-features = false }
+reth-optimism-forks = { git = "https://github.com/0xWilliamWang/reth", rev = "2591752ec3237a4b00734c6bd466fdf6c3f5a47e", default-features = false }
+reth-primitives = { git = "https://github.com/0xWilliamWang/reth", rev = "2591752ec3237a4b00734c6bd466fdf6c3f5a47e", default-features = false, features = [
     "std",
     "alloy-compat",
 ] }
-reth-revm = { git = "https://github.com/0xWilliamWang/reth", branch = "p1.1.0_zstd", default-features = false, features = [
+reth-revm = { git = "https://github.com/0xWilliamWang/reth", rev = "2591752ec3237a4b00734c6bd466fdf6c3f5a47e", default-features = false, features = [
     "std",
 ] }
-reth-storage-errors = { git = "https://github.com/0xWilliamWang/reth", branch = "p1.1.0_zstd", default-features = false, features = [
+reth-storage-errors = { git = "https://github.com/0xWilliamWang/reth", rev = "2591752ec3237a4b00734c6bd466fdf6c3f5a47e", default-features = false, features = [
     "std",
 ] }
 
